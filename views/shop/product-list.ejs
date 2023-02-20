@@ -13,18 +13,20 @@
           </header>
           <div class="card__image">
             <img
-              src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-              alt="No Image found"
+              src="<%= product.imageUrl %>"
+              alt="<%= product.title %>"
             />
           </div>
           <div class="card__content">
-            <h2 class="product__price">$19.99</h2>
+            <h2 class="product__price">$<%= product.price %></h2>
             <p class="product__description">
-              A very interresting book about death
+              <%= product.description %>
             </p>
           </div>
           <div class="card__actions">
-            <button class="btn">Add to Cart</button>
+            <form action="/add-to-cart" method="POST">
+              <button class="btn">Add to Cart</button>
+            </form>
           </div>
         </article>
         <% } %>
